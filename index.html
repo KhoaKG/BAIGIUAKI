@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm 5 - Lập Trình Web Nâng Cao</title>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/base.css">
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+        <p>Đang tải...</p>
+    </div>
+
+    <header class="header" id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#hero">Nhóm <span class="logo-highlight">5</span></a>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#hero" class="nav-active-link">Trang chủ</a></li>
+                    <li><a href="#about">Giới thiệu</a></li>
+                    <li><a href="#members">Thành viên</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div id="particles-js"></div> <div class="container hero-content animate-fade-in delay-300">
+            <h1>Chào mừng đến với <br> Nhóm <span class="highlight">5</span></h1>
+            <p class="hero-subtitle">Chúng tôi là một nhóm sinh viên đầy nhiệt huyết, chuyên sâu về phát triển web và khoa học dữ liệu. Cùng nhau, chúng tôi biến ý tưởng thành hiện thực.</p>
+            <div class="hero-buttons">
+                <a href="#members" class="btn btn-primary btn-shine">
+                    Xem thành viên <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary btn-outline">
+                    Liên hệ chúng tôi <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section bg-light">
+        <div class="container animate-slide-up">
+            <h2 class="section-title">Về Chúng tôi</h2>
+            <div class="about-content">
+                <div class="about-text animate-fade-in-left delay-100">
+                    <h3>Chúng tôi là ai?</h3>
+                    <p>Nhóm 5 được thành lập bởi các sinh viên chuyên ngành Công nghệ thông tin tại Trường Đại học Giao thông Vận tải TP. Hồ Chí Minh. Với sự đa dạng về kỹ năng và niềm đam mê chung, chúng tôi hợp tác để giải quyết các thách thức công nghệ và tạo ra những sản phẩm chất lượng.</p>
+                    <p>Mục tiêu của chúng tôi là áp dụng kiến thức học được vào thực tiễn, đồng thời không ngừng học hỏi và phát triển bản thân trong lĩnh vực lập trình web và kỹ thuật dữ liệu. Chúng tôi tin rằng tinh thần đồng đội và sự sáng tạo là chìa khóa để đạt được thành công.</p>
+                    <p>Chúng tôi luôn chào đón các cơ hội hợp tác và dự án mới. Hãy cùng nhau xây dựng tương lai công nghệ!</p>
+                    <a href="#contact" class="btn btn-primary btn-small">Gửi lời chào <i class="fas fa-handshake"></i></a>
+                </div>
+                <div class="about-animation animate-fade-in-right delay-200" id="about-animation-container">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="members" class="members-section">
+        <div class="container animate-slide-up">
+            <h2 class="section-title">Thành viên của nhóm</h2>
+            <div class="member-grid">
+                <div class="member-card animate-zoom-in">
+                    <a href="./member1/member1.html" class="member-link"> <div class="avatar-wrapper">
+                            <img src="./assets/images/cv.jpg" alt="Avatar Võ Văn Giáp" class="member-avatar">
+                            <div class="overlay">
+                                <i class="fas fa-external-link-alt"></i> Xem CV
+                            </div>
+                        </div>
+                        <h3>Võ Văn Giáp</h3>
+                        <p class="member-role">Data Engineer</p>
+                        <div class="social-links">
+                            <a href="https://github.com/vogiag2401" target="_blank" title="GitHub cá nhân"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" title="LinkedIn cá nhân"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="member-card animate-zoom-in delay-100">
+                    <a href="./member3/index.html" class="member-link"> <div class="avatar-wrapper">
+                            <img src="./assets/images/Khoa.png" alt="Avatar Nguyễn Nhật Khoa" class="member-avatar">
+                            <div class="overlay">
+                                <i class="fas fa-external-link-alt"></i> Xem CV
+                            </div>
+                        </div>
+                        <h3>Nguyễn Nhật Khoa</h3>
+                        <p class="member-role">Web Developer</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank" title="GitHub cá nhân"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" title="LinkedIn cá nhân"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="member-card animate-zoom-in delay-200">
+                    <a href="./member2/cv.html" class="member-link"> <div class="avatar-wrapper">
+                            <img src="./assets/images/avatar_placeholder.jpg" alt="Avatar Trần Hoàng Triệu" class="member-avatar">
+                            <div class="overlay">
+                                <i class="fas fa-external-link-alt"></i> Xem CV
+                            </div>
+                        </div>
+                        <h3>Trần Hoàng Triệu</h3>
+                        <p class="member-role">Backend Developer</p>
+                        <div class="social-links">
+                            <a href="#" target="_blank" title="GitHub cá nhân"><i class="fab fa-github"></i></a>
+                            <a href="#" target="_blank" title="LinkedIn cá nhân"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container animate-slide-up">
+            <h2 class="section-title">Liên hệ Chúng tôi</h2>
+            <p class="text-center contact-intro">Chúng tôi luôn sẵn lòng lắng nghe ý kiến và các cơ hội hợp tác. Hãy kết nối với chúng tôi qua các kênh dưới đây:</p>
+            <div class="contact-info-grid">
+                <div class="contact-item animate-fade-in delay-100">
+                    <i class="fas fa-envelope icon-large"></i>
+                    <h4>Email</h4>
+                    <p>project.group5@email.com</p>
+                    <a href="mailto:project.group5@email.com" class="contact-link">Gửi Email</a>
+                </div>
+                <div class="contact-item animate-fade-in delay-200">
+                    <i class="fas fa-phone-alt icon-large"></i>
+                    <h4>Điện thoại</h4>
+                    <p>+84 123 456 789</p>
+                    <a href="tel:+84123456789" class="contact-link">Gọi ngay</a>
+                </div>
+                <div class="contact-item animate-fade-in delay-300">
+                    <i class="fas fa-map-marker-alt icon-large"></i>
+                    <h4>Địa chỉ</h4>
+                    <p>TP. Hồ Chí Minh, Việt Nam</p>
+                    <a href="https://www.google.com/maps?q=Ho+Chi+Minh+City" target="_blank" class="contact-link">Xem trên bản đồ</a>
+                </div>
+            </div>
+            <div class="social-icons text-center animate-fade-in delay-400">
+                <a href="#" target="_blank" title="Facebook của nhóm"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" title="Twitter của nhóm"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank" title="LinkedIn của nhóm"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" title="GitHub của nhóm"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© <span id="current-year"></span> Nhóm 5 - Lập trình web nâng cao. Bảo lưu mọi quyền.</p>
+            <div class="footer-links">
+                <a href="#hero">Trang chủ</a> |
+                <a href="#about">Về chúng tôi</a> |
+                <a href="#contact">Liên hệ</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,889 @@
+/* Custom CSS for Group 5 Website */
+
+/* --- Variables --- */
+:root {
+    --primary-color: #4A6E8C; /* Xanh lam đậm hơn, mang tính chất corporate */
+    --primary-light: #6C9BC7; /* Xanh lam sáng hơn, dịu hơn */
+    --secondary-color: #FF8F5A; /* Màu cam san hô, ấm áp và hiện đại */
+    --accent-color: #2ED1B0; /* Xanh ngọc lục bảo, tươi mới và tạo điểm nhấn */
+    --text-color: #34495E; /* Dark slate gray, rất dễ đọc */
+    --light-text-color: #ECF0F1; /* Gần như trắng, nhưng dịu hơn */
+    --background-light: #F8F9FA; /* Nền sáng rất nhẹ nhàng, gần trắng tinh khôi */
+    --background-dark: #2C3E50; /* Giữ nguyên màu tối cho footer/members section */
+    --header-bg: rgba(255, 255, 255, 0.98); /* Header hơi trong suốt, nhưng rõ ràng hơn */
+    --header-border: #E0E0E0;
+    --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Bóng đổ rõ hơn nhưng vẫn tinh tế */
+    --box-shadow-light: 0 2px 10px rgba(0, 0, 0, 0.07);
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+
+    /* --- Hero Section Specific Colors (Updated for softer, more professional look) --- */
+    --hero-gradient-start: #E0F2F7; /* Rất nhẹ, xanh da trời pha trắng */
+    --hero-gradient-end: #C4E4F0;   /* Xanh da trời nhạt hơn một chút */
+    --hero-overlay-color: rgba(240, 248, 255, 0.7); /* Overlay màu trắng xanh nhẹ, hơi trong suốt */
+}
+
+/* --- Base Styles --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-light);
+    overflow-x: hidden; /* Ngăn chặn cuộn ngang */
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--background-light);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    box-shadow: var(--box-shadow-light);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-light);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1); /* Hơi đậm hơn khi hover */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-color: var(--primary-color);
+    box-shadow: var(--box-shadow-light);
+}
+
+.btn i {
+    margin-left: 10px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.btn:hover i {
+    transform: translateX(5px);
+}
+
+.btn-small {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    border-radius: 30px;
+}
+
+/* Shine effect for primary button */
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-30deg);
+    transition: left 0.6s ease-out;
+    z-index: -1;
+}
+
+.btn-shine:hover::after {
+    left: 100%;
+}
+
+
+/* --- Preloader --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader {
+    border: 8px solid var(--primary-color);
+    border-top: 8px solid var(--accent-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Header --- */
+.header {
+    background-color: var(--header-bg);
+    padding: 15px 0;
+    box-shadow: var(--box-shadow-light);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+    border-bottom: 1px solid var(--header-border);
+}
+
+.header.hidden {
+    transform: translateY(-100%);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+.logo-highlight {
+    color: var(--secondary-color);
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-links li a {
+    color: var(--text-color);
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+.navbar .nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-color);
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    transition: width var(--transition-speed) ease;
+}
+
+.navbar .nav-links li a:hover::after,
+.navbar .nav-links li a.nav-active-link::after {
+    width: 100%;
+}
+
+.navbar .nav-links li a.nav-active-link {
+    color: var(--primary-color);
+}
+
+/* Burger menu for mobile */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Nav Toggle Animation */
+.burger.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.burger.toggle .line2 {
+    opacity: 0;
+}
+.burger.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* --- Hero Section (MAJOR OVERHAUL FOR PROFESSIONAL LOOK) --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    /* Sophisticated, subtle gradient */
+    background: linear-gradient(135deg, var(--hero-gradient-start) 0%, var(--hero-gradient-end) 100%);
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* Add a subtle overlay on top of particles for better contrast */
+    background: var(--hero-overlay-color); /* Sử dụng overlay màu trắng xanh nhẹ, hơi trong suốt */
+    mix-blend-mode: multiply; /* Hòa trộn để tạo hiệu ứng trong suốt hơn */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    /* Center content with flex for robust centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.8rem; /* Slightly larger for impact */
+    font-weight: 800;
+    margin-bottom: 25px; /* Tăng khoảng cách dưới tiêu đề */
+    line-height: 1.2;
+    color: var(--primary-color); /* Màu chữ chính, đồng bộ với primary */
+    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Bóng đổ tinh tế hơn */
+}
+
+.hero-content .highlight {
+    color: var(--accent-color); /* Màu nhấn vẫn là accent-color */
+}
+
+.hero-subtitle {
+    font-size: 1.4rem; /* Slightly larger for readability */
+    max-width: 800px; /* Tăng chiều rộng tối đa cho phụ đề */
+    margin: 0 auto 50px; /* Tăng khoảng cách dưới phụ đề */
+    line-height: 1.6;
+    color: var(--text-color); /* Màu text chung, dễ đọc trên nền sáng */
+    opacity: 0.9;
+    font-weight: 400; /* Dịu hơn cho phụ đề */
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Tăng khoảng cách giữa các nút */
+}
+
+/* Specific button styling for Hero section to ensure visibility and harmony */
+.hero-buttons .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 14px 30px; /* Nút lớn hơn một chút */
+    font-size: 1.05rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Bóng đổ mạnh hơn cho nút chính */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn-secondary {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 14px 30px; /* Nút lớn hơn một chút */
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-buttons .btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Cho phép wrap trên màn hình nhỏ */
+    justify-content: center;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 350px; /* Đảm bảo đủ rộng cho text */
+    padding-right: 20px;
+}
+
+.about-text h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.about-text h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 80%;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: var(--text-color); /* Màu text chung, dễ đọc hơn */
+}
+
+/* About Animation Container */
+.about-animation {
+    flex: 1;
+    min-width: 400px; /* Vẫn giữ kích thước tối thiểu tương tự ảnh */
+    height: 350px; /* Đặt chiều cao cố định cho animation container */
+    position: relative;
+    overflow: hidden; /* Đảm bảo các phần tử animation không tràn ra ngoài */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow); /* Sử dụng box-shadow đậm hơn cho hiệu ứng */
+    /* Changed gradient for About section for more harmony */
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-color));
+}
+
+/* Gradient background for About Animation - Will be created/controlled by JS */
+.about-animation .gradient-bg-js {
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    /* Updated: Using new color variables for a more cohesive look */
+    background: linear-gradient(45deg, var(--primary-light), var(--accent-color), var(--primary-color), var(--secondary-color));
+    background-size: 200% 200%;
+    animation: aboutGradientMove 15s ease infinite alternate;
+    border-radius: var(--border-radius);
+    will-change: background-position; /* Tối ưu hóa hiệu suất */
+}
+
+@keyframes aboutGradientMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Circles for About Animation - Will be created/controlled by JS */
+.about-animation .circle-js {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2); /* Màu trắng trong suốt */
+    border-radius: 50%;
+    filter: blur(10px); /* Làm mờ để trông mềm mại hơn */
+    opacity: 0;
+    will-change: transform, opacity; /* Tối ưu hóa hiệu suất */
+}
+
+/* --- Members Section --- */
+.members-section {
+    padding: 100px 0;
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+}
+
+.members-section .section-title {
+    color: var(--light-text-color);
+}
+
+.members-section .section-title::after {
+    background-color: var(--secondary-color);
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+    justify-content: center; /* Căn giữa các card nếu có ít hơn 3 */
+}
+
+.member-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-color); /* Đảm bảo text rõ ràng trên nền trắng */
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Hơi đậm hơn khi hover */
+}
+
+.member-link {
+    display: block; /* Đảm bảo toàn bộ card là link */
+    color: inherit; /* Kế thừa màu text */
+}
+
+.avatar-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 30px auto 20px;
+    position: relative;
+    /* Updated: Using new color variables for ring effect */
+    box-shadow: 0 0 0 5px var(--primary-light), 0 0 0 8px var(--accent-color);
+    transition: box-shadow 0.3s ease;
+}
+
+.member-card:hover .avatar-wrapper {
+    box-shadow: 0 0 0 5px var(--accent-color), 0 0 0 8px var(--secondary-color);
+}
+
+.member-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.avatar-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.avatar-wrapper:hover .overlay {
+    opacity: 1;
+}
+
+.overlay i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.member-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.member-card .member-role {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.member-card .social-links {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.member-card .social-links a {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.member-card .social-links a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+
+/* --- Contact Section --- */
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-intro {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    color: var(--text-color); /* Sử dụng màu text chung */
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+}
+
+.contact-item .icon-large {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.contact-item p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.contact-item .contact-link {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom var(--transition-speed) ease;
+}
+
+.contact-item .contact-link:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+.social-icons {
+    font-size: 2.2rem;
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    margin: 0 15px;
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: var(--light-text-color);
+    margin: 0 10px;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+
+/* --- Animations (Scroll Reveal) --- */
+.animate-fade-in { opacity: 0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.animate-fade-in.animated { opacity: 1; transform: translateY(0); }
+.animate-fade-in-left { opacity: 0; transform: translateX(-50px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.animate-fade-in-left.animated { opacity: 1; transform: translateX(0); }
+.animate-fade-in-right { opacity: 0; transform: translateX(50px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.animate-fade-in-right.animated { opacity: 1; transform: translateX(0); }
+.animate-slide-up { opacity: 0; transform: translateY(50px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.animate-slide-up.animated { opacity: 1; transform: translateY(0); }
+.animate-zoom-in { opacity: 0; transform: scale(0.9); transition: opacity 1s ease-out, transform 1s ease-out; }
+.animate-zoom-in.animated { opacity: 1; transform: scale(1); }
+
+/* Delay classes (for staggering animations) */
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .header .container {
+        padding: 0 15px;
+    }
+
+    .navbar .nav-links {
+        gap: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about-text {
+        padding-right: 0;
+        text-align: center;
+        min-width: unset;
+    }
+
+    .about-text h3 {
+        padding-left: 0;
+    }
+
+    .about-text h3::before {
+        display: none; /* Hide vertical line on small screens */
+    }
+
+    .about-animation {
+        min-width: unset;
+        width: 90%; /* Chiếm phần lớn chiều rộng */
+        height: 300px; /* Giảm chiều cao trên tablet */
+    }
+
+    .member-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0; /* Changed from 0 to -100% and then translate for slide in effect */
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        padding-top: 100px; /* Khoảng cách từ trên xuống */
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar .nav-links li {
+        opacity: 0;
+        margin-bottom: 25px;
+    }
+
+    .navbar .nav-links li a {
+        color: var(--light-text-color);
+        font-size: 1.5rem;
+    }
+    .navbar .nav-links li a::after {
+        background-color: var(--secondary-color);
+    }
+
+    .navbar .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: flex;
+        z-index: 1001; /* Đảm bảo burger nằm trên nav-links */
+    }
+
+    /* Animation for nav links to fade in */
+    .nav-links.nav-active li {
+        animation: navLinkFade 0.5s ease forwards;
+    }
+
+    .nav-links.nav-active li:nth-child(1) { animation-delay: 0.1s; }
+    .nav-links.nav-active li:nth-child(2) { animation-delay: 0.2s; }
+    .nav-active.nav-active li:nth-child(3) { animation-delay: 0.3s; }
+    .nav-active.nav-active li:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes navLinkFade {
+        from { opacity: 0; transform: translateX(50px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .about-animation {
+        width: 100%;
+        height: 250px; /* Giảm chiều cao thêm trên mobile */
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .logo a {
+        font-size: 1.5rem;
+    }
+}
